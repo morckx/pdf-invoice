@@ -588,7 +588,7 @@ class InvoicePrinter extends tFPDF
                 //Information
                 $this->Ln(5);
                 $this->SetTextColor(50, 50, 50);
-                $this->SetFont($this->font, 'B', 10);
+                $this->SetFont($this->font, 'B', 8);
                 $this->Cell($width, $lineheight, iconv(self::ICONV_CHARSET_INPUT, self::ICONV_CHARSET_OUTPUT_A, $this->from[0] ?? 0), 0, 0, 'L');
                 $this->Cell(0, $lineheight, iconv(self::ICONV_CHARSET_INPUT, self::ICONV_CHARSET_OUTPUT_A, $this->to[0] ?? 0), 0, 0, 'L');
                 $this->SetFont($this->font, '', 8);
