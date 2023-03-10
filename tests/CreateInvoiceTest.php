@@ -19,7 +19,7 @@ class CreateInvoiceTest extends TestCase
         $invoice->setTime(date('h:i:s A', time()));
         $invoice->setDue(date('M dS ,Y', strtotime('+3 months')));
         $invoice->setFrom(array("Seller Name","Sample Company Name","128 AA Juanita Ave","Glendora , CA 91740","United States of America"));
-        $invoice->setTo(array("Purchaser Name","Sample Company Name","128 AA Juanita Ave","Glendora , CA 91740","United States of America"));
+        $invoice->setTo(array('Назва покупки', 'Зразок назви компанії',"128 AA Juanita Ave","Glendora , CA 91740","United States of America"));
         $invoice->addItem("AMD Athlon X2DC-7450", "2.4GHz/1GB/160GB/SMP-DVD/VB", 6, 0, 580, 0, 3480);
         $invoice->addItem("PDC-E5300", "2.6GHz/1GB/320GB/SMP-DVD/FDD/VB", 4, 0, 645, 0, 2580);
         $invoice->addItem('LG 18.5" WLCD', "", 10, 0, 230, 0, 2300);

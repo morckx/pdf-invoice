@@ -12,14 +12,13 @@
  */
 
 namespace Konekt\PdfInvoice;
+use tFPDF;
 
-use FPDF;
-
-class InvoicePrinter extends FPDF
+class InvoicePrinter extends tFPDF
 {
     public const ICONV_CHARSET_INPUT = 'UTF-8';
-    public const ICONV_CHARSET_OUTPUT_A = 'ISO-8859-1//TRANSLIT';
-    public const ICONV_CHARSET_OUTPUT_B = 'windows-1252//TRANSLIT';
+    public const ICONV_CHARSET_OUTPUT_A = 'UTF-8';
+    public const ICONV_CHARSET_OUTPUT_B = 'UTF-8';
 
     public const INVOICE_SIZE_LEGAL = 'legal';
     public const INVOICE_SIZE_LETTER = 'letter';
@@ -33,7 +32,7 @@ class InvoicePrinter extends FPDF
     public const NUMBER_ALIGNMENT_RIGHT = 'right';
 
     public $angle = 0;
-    public $font = 'helvetica';                 /* Font Name : See inc/fpdf/font for all supported fonts */
+    public $font = 'dejavusans';                /* Font Name : See vendor/setasign/tfpdf/font/unifont for all supported fonts */
     public $columnOpacity = 0.06;               /* Items table background color opacity. Range (0.00 - 1) */
     public $columnSpacing = 0.3;                /* Spacing between Item Tables */
     public $referenceformat = [                 /* Currency formater */
@@ -104,6 +103,10 @@ class InvoicePrinter extends FPDF
 
         $this->AliasNbPages();
         $this->SetMargins($this->margins['l'], $this->margins['t'], $this->margins['r']);
+        $this->AddFont('dejavusans', '', 'DejaVuSans.ttf', true);
+        $this->AddFont('dejavusans', 'B', 'DejaVuSans-Bold.ttf', true);
+        $this->AddFont('dejavusans', 'I', 'DejaVuSans-Oblique.ttf', true);
+        $this->AddFont('dejavusans', 'BI', 'DejaVuSans-BoldOblique.ttf', true);
     }
 
     private function setLanguage($language)
