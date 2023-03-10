@@ -466,7 +466,7 @@ class InvoicePrinter extends tFPDF
         $lineheight = 5;
         //Calculate position of strings
         $this->SetFont($this->font, 'B', 9);
-        $positionX = $this->document['w'] - $this->margins['l'] - $this->margins['r']
+        $positionX = $this->document['w'] - $this->margins['l'] - $this->margins['r'] - 5
                      - max(
                          $this->GetStringWidth(mb_strtoupper($this->lang['number'], self::ICONV_CHARSET_INPUT)),
                          $this->GetStringWidth(mb_strtoupper($this->lang['date'], self::ICONV_CHARSET_INPUT)),
