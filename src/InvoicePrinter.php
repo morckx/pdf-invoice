@@ -43,7 +43,7 @@ class InvoicePrinter extends tFPDF
         'negativeParenthesis' => false                      /* Parenthesis arund price */
     ];
     public $margins = [
-        'l' => 15,
+        'l' => 17,
         't' => 15,
         'r' => 15,
     ]; /* l: Left Side , t: Top Side , r: Right Side */
@@ -90,7 +90,7 @@ class InvoicePrinter extends tFPDF
         $this->totals = [];
         $this->addText = [];
         $this->currency = $currency;
-        $this->maxImageDimensions = [230, 130];
+        $this->maxImageDimensions = [230, 90];
         $this->dimensions         = [61.0, 34.0];
         $this->from               = [''];
         $this->to                 = [''];
@@ -550,7 +550,7 @@ class InvoicePrinter extends tFPDF
             } else {
                 $this->SetY($this->GetY() + 10);
             }
-            $this->Ln(5);
+            $this->Ln(1);
             $this->SetFillColor($this->color[0], $this->color[1], $this->color[2]);
             $this->SetTextColor($this->color[0], $this->color[1], $this->color[2]);
 
